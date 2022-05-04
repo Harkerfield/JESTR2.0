@@ -1,14 +1,14 @@
 import React from "react";
 
 
-import Home from "../home/Home.js";
-import Scheduler from "../scheduler/Scheduler.js";
-import Checker from "../checker/Checker.js";
-import Contact from "../contact/Contact.js";
-import Dashboard from "../dashboard/Dashboard.js";
-import SiteMaps from "../siteMaps/SiteMaps.js";
-import Admin from "../admin/Admin.js";
-import About from "../about/About.js";
+import Home from "./home/Home.js";
+import Scheduler from "./scheduler/Scheduler.js";
+import Checker from "./checker/Checker.js";
+import Contact from "./contact/Contact.js";
+import Dashboard from "./dashboard/Dashboard.js";
+import SiteMaps from "./siteMaps/SiteMaps.js";
+import Admin from "./admin/Admin.js";
+import About from "./about/About.js";
 
 /*
 import * as React from 'react';
