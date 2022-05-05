@@ -63,44 +63,44 @@ function Layout() {
       {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
       <nav>
-      <Box sx={{ flexGrow: 1 }}>
-<AppBar position="static">
-  <Toolbar variant="dense">
-    <IconButton
-      edge="start"
-      color="inherit"
-      aria-label="menu"
-      sx={{ mr: 2 }}
-    >
-      <MenuIcon />
-    </IconButton>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/">Home</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/scheduler">Scheduler</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/checker">Checker</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/dashboard">Dashboard</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/siteMaps">Site Maps</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/contact">Contact</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/about">About</Link>
-    </Typography>
-    <Typography variant="h6" color="inherit" component="div">
-    <Link to="/admin">Admin</Link>
-    </Typography>
-  </Toolbar>
-</AppBar>
-</Box>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar variant="dense">
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/">Home</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/scheduler">Scheduler</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/checker">Checker</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/dashboard">Dashboard</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/siteMaps">Site Maps</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/contact">Contact</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/about">About</Link>
+              </Typography>
+              <Typography variant="h6" color="inherit" component="div">
+                <Link to="/admin">Admin</Link>
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Box>
       </nav>
       <hr />
       {/* An <Outlet> renders whatever child route is currently active,
