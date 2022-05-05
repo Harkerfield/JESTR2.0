@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+//import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
-class Checker extends React.Component {
-  render() {
-    return /*#__PURE__*/ React.createElement(
-      'div',
-      null,
-      /*#__PURE__*/ React.createElement('h2', null, 'Checker'),
-      /*#__PURE__*/ React.createElement('p', null, 'Checker Info')
-    );
-  }
+export default function Checker() {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar variant="dense">
+          <Typography variant="h6" color="inherit" component="div">
+            Checker
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
 }
-
-export default Checker;

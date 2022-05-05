@@ -1,5 +1,11 @@
 import React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import Home from './home/Home.js';
 import Scheduler from './scheduler/Scheduler.js';
@@ -57,32 +63,44 @@ function Layout() {
       {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/scheduler">Scheduler</Link>
-          </li>
-          <li>
-            <Link to="/checker">Checker</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/siteMaps">Site Maps</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        </ul>
+      <Box sx={{ flexGrow: 1 }}>
+<AppBar position="static">
+  <Toolbar variant="dense">
+    <IconButton
+      edge="start"
+      color="inherit"
+      aria-label="menu"
+      sx={{ mr: 2 }}
+    >
+      <MenuIcon />
+    </IconButton>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/">Home</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/scheduler">Scheduler</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/checker">Checker</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/dashboard">Dashboard</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/siteMaps">Site Maps</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/contact">Contact</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/about">About</Link>
+    </Typography>
+    <Typography variant="h6" color="inherit" component="div">
+    <Link to="/admin">Admin</Link>
+    </Typography>
+  </Toolbar>
+</AppBar>
+</Box>
       </nav>
       <hr />
       {/* An <Outlet> renders whatever child route is currently active,
