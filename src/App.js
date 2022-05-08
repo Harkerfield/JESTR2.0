@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -58,6 +59,44 @@ export default function App() {
 }
 
 function Layout() {
+  const styles = {
+    className: 'block px-2 py-1 hover:underline text:black',
+  };
+
+  const menuLinks = [
+    {
+      to: '/',
+      name: 'Home',
+    },
+    {
+      to: '/scheduler',
+      name: 'Scheduler',
+    },
+    {
+      to: '/checker',
+      name: 'Checker',
+    },
+    {
+      to: '/dashboard',
+      name: 'Dashboard',
+    },
+    {
+      to: '/siteMaps',
+      name: 'Site Maps',
+    },
+    {
+      to: '/posts',
+      name: 'Posts',
+    },
+    {
+      to: '/About',
+      name: 'About',
+    },
+    {
+      to: '/admin',
+      name: 'Admin',
+    },
+  ];
   return (
     <div>
       {/* A "layout route" is a good place to put markup you want to
@@ -74,6 +113,13 @@ function Layout() {
               >
                 <MenuIcon />
               </IconButton>
+
+              {menuLinks.map((link) => (
+                <Link color="inherit" to={link.to}>
+                  {link.name}
+                </Link>
+              ))}
+
               <Typography variant="h6" color="inherit" component="div">
                 <Link to="/">Home</Link>
               </Typography>
@@ -232,7 +278,7 @@ function NoMatch() {
       'p',
       null,
       /*#__PURE__*/ React.createElement(
-        ReactRouterDOM.Link,
+        Link,
         {
           to: '/sites/354RANS/JESTR2/Script%20Files/Testing%20React/html/index.html',
         },
