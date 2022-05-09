@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';

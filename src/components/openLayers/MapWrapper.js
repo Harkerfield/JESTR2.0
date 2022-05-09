@@ -1,6 +1,6 @@
 // react
 import React, { useState, useEffect, useRef } from 'react';
-
+import Box from '@mui/material/Box';
 // openlayers
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -100,13 +100,13 @@ export default function MapWrapper(props) {
 
   // render component
   return (
-    <div>
-      <div ref={mapElement} className="map-container" style={{ height: '100px', width: '100%' }}></div>
+    <Box>
+      <div ref={mapElement} className="map-container"></div>
 
-      <div className="clicked-coord-label" style={{ height: '100px', width: '100%' }}>
+      <div className="clicked-coord-label">
         <p>{selectedCoord ? toStringXY(selectedCoord, 8) : ''}</p>
       </div>
 
-    </div>
+    </Box>
   );
 }
