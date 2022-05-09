@@ -25,6 +25,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 import Home from './home/Home.js';
 import Scheduler from './scheduler/Scheduler.js';
@@ -218,9 +219,9 @@ function Layout() {
           {menuLinks.map((link) => (
             <ListItem button key={link.to}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={link.name} />
             </ListItem>
           ))}
         </List>
