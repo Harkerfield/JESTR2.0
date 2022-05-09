@@ -9,21 +9,20 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material';
 
 // openlayers
-import GeoJSON from 'ol/format/GeoJSON'
+import GeoJSON from 'ol/format/GeoJSON';
 import Feature from 'ol/Feature';
 
-
-import MapWrapper from '../components/openLayers/MapWrapper.js'
-
-
+import MapWrapper from '../components/openLayers/MapWrapper.js';
 
 export default function SiteMaps() {
-  
   // set intial state
-  const [ features, setFeatures ] = useState([])
+  const [features, setFeatures] = useState([]);
 
-  // initialization - retrieve GeoJSON features from Mock JSON API get features from mock 
+  // initialization - retrieve GeoJSON features from Mock JSON API get features from mock
   //  GeoJson API (read from flat .json file in public directory)
+
+  {
+    
   useEffect( () => {
 
     fetch('/mock-geojson-api.json')
@@ -45,16 +44,16 @@ export default function SiteMaps() {
       })
 
   },[])
-  
+
+  }
+
   return (
     <div className="App">
-      
       <div className="app-label">
         <p>Map</p>
       </div>
-      
-      <MapWrapper features={features} />
 
+      <MapWrapper features={features} />
     </div>
-  )
+  );
 }

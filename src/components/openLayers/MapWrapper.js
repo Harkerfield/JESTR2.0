@@ -103,7 +103,7 @@ export default function MapWrapper(props) {
     <div>
       <div ref={mapElement} className="map-container" style={{ height: '100px', width: '100%' }}></div>
 
-      <div className="clicked-coord-label">
+      <div className="clicked-coord-label" style={{ height: '100px', width: '100%' }}>
         <p>{selectedCoord ? toStringXY(selectedCoord, 8) : ''}</p>
       </div>
 
