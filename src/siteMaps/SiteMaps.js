@@ -22,38 +22,46 @@ export default function SiteMaps() {
   //  GeoJson API (read from flat .json file in public directory)
 
   {
-    
-  useEffect( () => {
+    useEffect(() => {
+      fetch('/mock-geojson-api.json')
+        .then((response) => response.json())
+        .then((fetchedFeatures) => {
+          // parse fetched geojson into OpenLayers features
+          //  use options to convert feature from EPSG:4326 to EPSG:3857
+          const wktOptions = {
+            dataProjection: 'EPSG:4326',
+            featureProjection: 'EPSG:3857',
+          };
+          const parsedFeatures = new GeoJSON().readFeatures(
+            fetchedFeatures,
+            wktOptions
+          );
 
-    fetch('/mock-geojson-api.json')
-      .then(response => response.json())
-      .then( (fetchedFeatures) => {
-
-        // parse fetched geojson into OpenLayers features
-        //  use options to convert feature from EPSG:4326 to EPSG:3857
-        const wktOptions = {
-          dataProjection: 'EPSG:4326',
-          featureProjection: 'EPSG:3857'
-        }
-        const parsedFeatures = new GeoJSON().readFeatures(fetchedFeatures, wktOptions)
-
-        // set features into state (which will be passed into OpenLayers
-        //  map component as props)
-        setFeatures(parsedFeatures)
-
-      })
-
-  },[])
-
+          // set features into state (which will be passed into OpenLayers
+          //  map component as props)
+          setFeatures(parsedFeatures);
+        });
+    }, []);
   }
 
   return (
-    <div className="App">
-      <div className="app-label">
-        <p>Map</p>
-      </div>
+    <Box className="App">
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar variant="dense">
+            <Typography
+              variant="h6"
+              color="inherit"
+              component="div"
+              className="app-label"
+            >
+              Map
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
 
       <MapWrapper features={features} />
-    </div>
+    </Box>
   );
 }
