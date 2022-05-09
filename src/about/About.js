@@ -13,7 +13,14 @@ export default function About() {
       <AppBar position="static">
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit" component="div">
-            About
+            <h1>
+              354 RANS - JPARC Emitter Status and Training Request (JESTR) 2
+            </h1>
+
+            <p>
+              This site will be used to view the JPARC emitters. New features
+              include bombable target registration.
+            </p>
           </Typography>
         </Toolbar>
       </AppBar>

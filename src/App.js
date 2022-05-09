@@ -25,16 +25,19 @@ import { Routes, Route, Outlet, Link } from 'react-router-dom';
 export default function App() {
   return (
     <div>
+      {/*
       <h1>354 RANS - JPARC Emitter Status and Training Request (JESTR) 2</h1>
 
       <p>
         This site will be used to view the JPARC emitters. New features include
         bombable target Rrgistration.
       </p>
+      */}
 
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
      parent route elements. See the note about <Outlet> below. */}
+    
 
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -59,9 +62,6 @@ export default function App() {
 }
 
 function Layout() {
-  const styles = {
-    className: 'block px-2 py-1 hover:underline text:black',
-  };
 
   const menuLinks = [
     {
@@ -85,8 +85,8 @@ function Layout() {
       name: 'Site Maps',
     },
     {
-      to: '/posts',
-      name: 'Posts',
+      to: '/contact',
+      name: 'Contact',
     },
     {
       to: '/About',
@@ -115,35 +115,13 @@ function Layout() {
               </IconButton>
 
               {menuLinks.map((link) => (
-                <Link color="inherit" to={link.to}>
+                <Link to={link.to}>
+                <Button color="inherit" >
                   {link.name}
+                </Button>
                 </Link>
               ))}
 
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/">Home</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/scheduler">Scheduler</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/checker">Checker</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/dashboard">Dashboard</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/siteMaps">Site Maps</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/contact">Contact</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/about">About</Link>
-              </Typography>
-              <Typography variant="h6" color="inherit" component="div">
-                <Link to="/admin">Admin</Link>
-              </Typography>
             </Toolbar>
           </AppBar>
         </Box>
@@ -156,118 +134,6 @@ function Layout() {
     </div>
   );
 }
-
-/*
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function Scheduler() {
-  return (
-    <div>
-      <h2>Scheduler</h2>
-    </div>
-  );
-}
-
-function Checker() {
-  return (
-    <div>
-      <h2>Checker</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
-
-function SiteMaps() {
-  return (
-    <div>
-      <h2>Site Maps</h2>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div>
-      <h2>Contact</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Admin() {
-  return (
-    <div>
-      <h2>Admin</h2>
-    </div>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
-}
-*/
-
-//import * as React from 'react';
-//import { Routes, Route, Outlet, Link } from 'react-router-dom';
-
-//function Home() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Home"));
-//}
-
-//function Scheduler() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Scheduler"));
-//}
-
-//function Checker() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Checker"));
-//}
-
-//function Dashboard() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Dashboard"));
-//}
-
-//function SiteMaps() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Site Maps"));
-//}
-
-//function Contact() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Contact"));
-//}
-
-//function About() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "About"));
-//}
-
-//function Admin() {
-//  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Admin"));
-//}
 
 function NoMatch() {
   return /*#__PURE__*/ React.createElement(
