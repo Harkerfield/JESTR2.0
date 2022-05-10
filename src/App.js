@@ -26,6 +26,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import DateRangeIcon from '@mui/icons-material/DateRange';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 import Home from './home/Home.js';
 import Scheduler from './scheduler/Scheduler.js';
@@ -41,7 +42,7 @@ import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 */
 
-const drawerWidth = 240;
+const drawerWidth =220;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -131,34 +132,42 @@ function Layout() {
     {
       to: '/',
       name: 'Home',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/scheduler',
       name: 'Scheduler',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/checker',
       name: 'Checker',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/dashboard',
       name: 'Dashboard',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/siteMaps',
       name: 'Site Maps',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/contact',
       name: 'Contact',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/About',
       name: 'About',
+      icon: <ScheduleIcon />,
     },
     {
       to: '/admin',
       name: 'Admin',
+      icon: <ScheduleIcon />,
     },
   ];
 
@@ -217,12 +226,17 @@ function Layout() {
         <Divider />
         <List>
           {menuLinks.map((link) => (
-            <ListItem button key={link.to}>
-              <ListItemIcon>
-                {2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={link.name} />
-            </ListItem>
+            // <ListItem button href={link.to}>
+            //   <ListItemIcon>
+            //   {link.icon}
+            //   </ListItemIcon>
+            //   <ListItemText primary={link.name} />
+            // </ListItem>
+            <Link to={link.to}>
+            <Button style={{ padding: "10px 20px", textAlign: "center"}}color="inherit" >
+              {link.name}
+            </Button>
+            </Link>
           ))}
         </List>
         <Divider />
@@ -230,7 +244,7 @@ function Layout() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        //content
+       <Outlet />
       </Main>
     </Box>
   );
