@@ -197,7 +197,12 @@ function Layout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+
+          <Link to="/">
+          JESTR 2.0
+            </Link>
+
+
           </Typography>
         </Toolbar>
       </AppBar>
