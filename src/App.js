@@ -23,10 +23,16 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+;
 import DateRangeIcon from '@mui/icons-material/DateRange';
+import HomeIcon from '@mui/icons-material/Home';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import MapIcon from '@mui/icons-material/Map';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import InfoIcon from '@mui/icons-material/Info';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 import Home from './home/Home.js';
 import Scheduler from './scheduler/Scheduler.js';
@@ -132,7 +138,7 @@ function Layout() {
     {
       to: '/',
       name: 'Home',
-      icon: <ScheduleIcon />,
+      icon: <HomeIcon />,
     },
     {
       to: '/scheduler',
@@ -142,32 +148,32 @@ function Layout() {
     {
       to: '/checker',
       name: 'Checker',
-      icon: <ScheduleIcon />,
+      icon: <EventAvailableIcon />,
     },
     {
       to: '/dashboard',
       name: 'Dashboard',
-      icon: <ScheduleIcon />,
+      icon: <DashboardIcon />,
     },
     {
       to: '/siteMaps',
       name: 'Site Maps',
-      icon: <ScheduleIcon />,
+      icon: <MapIcon />,
     },
     {
       to: '/contact',
       name: 'Contact',
-      icon: <ScheduleIcon />,
+      icon: <ContactSupportIcon />,
     },
     {
       to: '/About',
       name: 'About',
-      icon: <ScheduleIcon />,
+      icon: <InfoIcon />,
     },
     {
       to: '/admin',
       name: 'Admin',
-      icon: <ScheduleIcon />,
+      icon: <AdminPanelSettingsIcon />,
     },
   ];
 
@@ -197,12 +203,9 @@ function Layout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-
           <Link to="/">
           JESTR 2.0
             </Link>
-
-
           </Typography>
         </Toolbar>
       </AppBar>
@@ -231,17 +234,17 @@ function Layout() {
         <Divider />
         <List>
           {menuLinks.map((link) => (
-            // <ListItem button href={link.to}>
-            //   <ListItemIcon>
-            //   {link.icon}
-            //   </ListItemIcon>
-            //   <ListItemText primary={link.name} />
-            // </ListItem>
-            <Link to={link.to}>
+            <ListItem button href={link.to}>
+              <ListItemIcon>
+              {link.icon}
+              </ListItemIcon>
+              <Link to={link.to}>
             <Button style={{ padding: "10px 20px", textAlign: "center"}}color="inherit" >
-              {link.name}
+            <ListItemText primary={link.name}/>
             </Button>
-            </Link>
+            </Link >
+            </ListItem>
+            
           ))}
         </List>
         <Divider />
